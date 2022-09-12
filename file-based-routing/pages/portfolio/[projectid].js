@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-export default function PortfolioProjectPage() {
+function PortfolioProjectPage() {
   const router = useRouter();
 
   console.log(router.pathname);
@@ -15,3 +15,5 @@ export default function PortfolioProjectPage() {
     </div>
   );
 }
+
+export default PortfolioProjectPage;

@@ -1,7 +1,9 @@
-export default function ListPage() {
+function ListPage() {
   return (
     <div>
       <h1>Lists go here</h1>
     </div>
   );
 }
+
+export default ListPage;
