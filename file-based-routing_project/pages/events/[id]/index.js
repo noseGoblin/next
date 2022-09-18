@@ -1,15 +1,15 @@
 import { useRouter } from 'next/router';
 
-function BlogPostsPage() {
+function EventDetail() {
   const router = useRouter();
 
   console.log(router.query);
 
   return (
     <div>
-      <h1>Blog Posts</h1>
+      <h1>Event Detail Page</h1>
     </div>
   );
 }
 
-export default BlogPostsPage;
+export default EventDetail;
