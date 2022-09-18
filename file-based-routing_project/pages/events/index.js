@@ -8,7 +8,7 @@ function EventsPage() {
 
   return (
     <div>
-      <h1>Events Page</h1>
+      <h1>All Events</h1>
       <ul>
         {events.map((e) => (
           <li key={e.id}>
