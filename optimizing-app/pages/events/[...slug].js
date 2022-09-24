@@ -23,9 +23,24 @@ function FilteredEvents(props) {
   // const numYear = +filteredYear;
   // const numMonth = +filteredMonth;
 
+  const filteredEvents = props.events;
+
+  const date = new Date(props.date.year, props.date.month - 1);
+
+  const pageHeadData = (
+    <Head>
+      <title>Filtered Event</title>
+      <meta
+        name='description'
+        content={`All events for ${props.date.year}/${props.date.month}`}
+      />
+    </Head>
+  );
+
   if (props.hasError) {
     return (
       <Fragment>
+        {pageHeadData}
         <ErrorAlert>
           <p>Invalid filter. Please adjust your values!</p>
         </ErrorAlert>
@@ -36,11 +51,10 @@ function FilteredEvents(props) {
     );
   }
 
-  const filteredEvents = props.events;
-
   if (!filteredEvents || filteredEvents.length === 0) {
     return (
       <Fragment>
+        {pageHeadData}
         <ErrorAlert>
           <p>No events found for the chosen filter!</p>
         </ErrorAlert>
@@ -51,17 +65,9 @@ function FilteredEvents(props) {
     );
   }
 
-  const date = new Date(props.date.year, props.date.month - 1);
-
   return (
     <Fragment>
-      <Head>
-        <title>Filtered Event</title>
-        <meta
-          name='description'
-          content={`All events for ${props.date.year}/${props.date.month}`}
-        />
-      </Head>
+      {pageHeadData}
       <ResultsTitle date={date} />
       <EventList items={filteredEvents} />
     </Fragment>
