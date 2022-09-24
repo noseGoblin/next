@@ -27,8 +27,9 @@ export async function getEventById(id) {
 }
 
 export async function getFilteredEvents(dateFilter) {
+  const { year, month } = dateFilter;
+
   const allEvents = await getAllEvents();
-  dateFilter = { year, month };
 
   let filteredEvents = allEvents.filter((event) => {
     const eventDate = new Date(event.date);
