@@ -23,6 +23,7 @@ function EventsPage(props) {
         <meta
           name='description'
           content='Find a log a great events to attend.'
+          key='description'
         />
       </Head>
       <EventsSearch onSearch={findEventsHandler} />
