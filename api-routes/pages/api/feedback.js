@@ -19,8 +19,9 @@ function handler(req, res) {
     data.push(newFeedback);
     fs.writeFileSync(filePath, JSON.stringify(data));
     res.status(201).json({ message: 'Sucess!', feedback: newFeedback });
+  } else {
+    res.status(200).json({ message: 'This works!' });
   }
-  res.status(200).json({ message: 'This works!' });
 }
 
 export default handler;
