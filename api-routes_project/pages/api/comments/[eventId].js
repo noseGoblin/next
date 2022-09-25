@@ -8,7 +8,7 @@ function handler(req, res) {
     if (
       !email.includes('@') ||
       !name ||
-      name.trm() === '' ||
+      name.trim() === '' ||
       !text ||
       text.trim() === ''
     ) {
@@ -30,10 +30,10 @@ function handler(req, res) {
 
   if (req.method === 'GET') {
     const dummyList = [
-      {id:, 'c1', name: 'me', text: 'A first comment!' },
-      {id:, 'c2', name: 'you', text: 'A 2nd comment!' },
+      { id: 'c1', name: 'me', text: 'A first comment!' },
+      { id: 'c2', name: 'you', text: 'A 2nd comment!' },
     ];
-    
+
     res.status(200).json({ comments: dummyList });
   }
 }
