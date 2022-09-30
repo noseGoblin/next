@@ -1,4 +1,3 @@
-import { MongoClient } from 'mongodb';
 import {
   connectDatabse,
   insertDocument,
@@ -11,7 +10,7 @@ async function handler(req, res) {
   let client;
 
   try {
-    const client = await connectDatabse();
+    client = await connectDatabse();
   } catch (error) {
     res.status(500).json({ message: 'Connecting to the database failed!' });
     return;
@@ -43,7 +42,7 @@ async function handler(req, res) {
     let result;
 
     try {
-      const result = await insertDocument(client, 'comments', newComment);
+      result = await insertDocument(client, 'comments', newComment);
       newComment._id = result.insertedId;
       res.status(201).json({ message: 'Added comment.', comment: newComment });
     } catch (error) {
@@ -60,7 +59,7 @@ async function handler(req, res) {
     }
   }
 
-  await client.close();
+  client.close();
 }
 
 export default handler;

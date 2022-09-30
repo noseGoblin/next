@@ -1,5 +1,3 @@
-import { MongoClient } from 'mongodb';
-
 import { connectDatabse, insertDocument } from '../../helpers/db-util';
 
 async function handler(req, res) {
@@ -22,7 +20,7 @@ async function handler(req, res) {
 
     try {
       await insertDocument(client, 'newsletter' { email: userEmail });
-      await client.close();
+      client.close();
     } catch (error) {
       res.status(500).json({ message: 'Inserting data failed!' });
       return;
