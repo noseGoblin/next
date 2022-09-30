@@ -10,13 +10,13 @@ async function handler(req, res) {
     }
 
     const client = await MongoClient.connect(
-      'mongodb+srv://JacobM:9I0a8vupVsVi3Gip@cluster0.ryf9npw.mongodb.net/newsletter?retryWrites=true&w=majority'
+      'mongodb+srv://JacobM:9I0a8vupVsVi3Gip@cluster0.ryf9npw.mongodb.net/events?retryWrites=true&w=majority'
     );
     const db = client.db();
 
-    await db.collection('emails').insertOne({ email: userEmail });
+    await db.collection('newsletter').insertOne({ email: userEmail });
 
-    client.close();
+    await client.close();
 
     res.status(201).json({ message: 'Happy Registration!' });
   }

@@ -4,7 +4,7 @@ async function handler(req, res) {
   const eventId = req.query.eventId;
 
   const client = await MongoClient.connect(
-    'mongodb+srv://JacobM:9I0a8vupVsVi3Gip@cluster0.ryf9npw.mongodb.net/comments?retryWrites=true&w=majority'
+    'mongodb+srv://JacobM:9I0a8vupVsVi3Gip@cluster0.ryf9npw.mongodb.net/events?retryWrites=true&w=majority'
   );
 
   if (req.method === 'POST') {
@@ -31,7 +31,7 @@ async function handler(req, res) {
 
     const db = client.db();
 
-    const result = await db.collection('comments').insertOne({ newComment });
+    const result = await db.collection('comments').insertOne(newComment);
 
     console.log(result);
 
@@ -51,6 +51,8 @@ async function handler(req, res) {
 
     res.status(200).json({ comments: documents });
   }
+
+  await client.close();
 }
 
 export default handler;

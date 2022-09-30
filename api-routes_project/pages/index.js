@@ -14,11 +14,8 @@ function Home(props) {
           content='Find a log a great events to attend.'
         />
       </Head>
-      <main>
-        <h1>Events Home</h1>
-        <NewsletterRegistration />
-        <EventList items={props.events} />
-      </main>
+      <NewsletterRegistration />
+      <EventList items={props.events} />
     </div>
   );
 }
