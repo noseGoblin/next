@@ -1,0 +1,24 @@
+import PostHeader from './post-header';
+import classes from './post-content.module.css';
+
+const DUMMY_POSTS = {
+  slug: 'test',
+  title: 'TEST Title',
+  image: 'getting-started-nextjs.png',
+  excerpt: 'test excerpt',
+  date: '2022-10-02',
+  content: '## This is a test post',
+};
+
+function PostConent() {
+  const imagePath = `/images/posts/${DUMMY_POSTS.slug}/${DUMMY_POSTS.image}`;
+
+  return (
+    <article className={classes.content}>
+      <PostHeader title={DUMMY_POSTS.title} image={imagePath} />
+      {DUMMY_POSTS.content}
+    </article>
+  );
+}
+
+export default PostConent;
