@@ -4,7 +4,7 @@ import PostHeader from './post-header';
 import classes from './post-content.module.css';
 
 const DUMMY_POSTS = {
-  slug: 'test',
+  slug: 'getting-started-with-nextjs',
   title: 'TEST Title',
   image: 'getting-started-nextjs.png',
   excerpt: 'test excerpt',

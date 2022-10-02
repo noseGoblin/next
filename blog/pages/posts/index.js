@@ -2,30 +2,16 @@ import AllPosts from '../../components/posts/all-posts';
 
 const DUMMY_POSTS = [
   {
-    slug: 'test',
+    slug: 'getting-started-with-nextjs',
     title: 'TEST Title',
     image: 'getting-started-nextjs.png',
     excerpt: 'test excerpt',
     date: '2022-10-02',
   },
   {
-    slug: 'test2',
+    slug: 'mastering-javascript',
     title: 'TEST Title',
-    image: 'getting-started-nextjs.png',
-    excerpt: 'test excerpt',
-    date: '2022-10-02',
-  },
-  {
-    slug: 'test3',
-    title: 'TEST Title',
-    image: 'getting-started-nextjs.png',
-    excerpt: 'test excerpt',
-    date: '2022-10-02',
-  },
-  {
-    slug: 'test4',
-    title: 'TEST Title',
-    image: 'getting-started-nextjs.png',
+    image: 'nextjs-file-based-routing.png',
     excerpt: 'test excerpt',
     date: '2022-10-02',
   },
