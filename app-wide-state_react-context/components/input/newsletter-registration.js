@@ -14,7 +14,7 @@ function NewsletterRegistration() {
 
     notificationCtx.showNotification({
       title: 'Singing up...',
-      messag: 'Registering for newsletter.',
+      message: 'Registering for newsletter.',
       status: 'pending',
     });
 
@@ -37,14 +37,14 @@ function NewsletterRegistration() {
       .then((data) => {
         notificationCtx.showNotification({
           title: 'Success!',
-          messag: 'Thanks for registering for the newsletter!',
+          message: 'Thanks for registering for the newsletter!',
           status: 'success',
         });
       })
       .catch((error) => {
         notificationCtx.showNotification({
           title: 'Error!',
-          messag: error.message || 'DANGER: Something is wrong!',
+          message: error.message || 'DANGER: Something is wrong!',
           status: 'error',
         });
       });
