@@ -36,15 +36,6 @@ async function handler(req, res) {
       return;
     }
 
-    let notificationCt;
-
-    notificationCtx.showNotification({
-      title: 'New comment!',
-      messag: 'Loading new comment...',
-      status: 'pending',
-    });
-    notificationCt.useContext(NotificationContext);
-
     const newComment = {
       email,
       name,
@@ -58,18 +49,8 @@ async function handler(req, res) {
       result = await insertDocument(client, 'comments', newComment);
       newComment._id = result.insertedId;
       res.status(201).json({ message: 'Added comment.', comment: newComment });
-      notificationCtx = await showNotification({
-        title: 'New Comment!',
-        messag: 'Your comment is posted',
-        status: 'success',
-      });
     } catch (error) {
       res.status(500).json({ message: 'Inserting comment failed!' });
-      notificationCtx = await showNotification({
-        title: 'Cannot add comment!',
-        messag: 'DANGER: Failed to post comment!',
-        status: 'error',
-      });
     }
   }
 
