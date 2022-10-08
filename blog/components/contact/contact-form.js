@@ -1,11 +1,13 @@
 import { useState } from 'react';
 
 import classes from './contact-form.module.css';
+import Notification from '../ui/notification';
 
 function ContactForm() {
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredName, setEnteredName] = useState('');
   const [enteredMessage, setEnteredMessage] = useState('');
+  const [enteredStatus, setEnteredStatus] = useState(); // 'pending' 'success' 'error'
 
   function sendMessageHandler(event) {
     event.preventDefault();
