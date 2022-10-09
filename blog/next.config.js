@@ -3,6 +3,7 @@ const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 module.exports = (phase) => {
   if (phase === PHASE_DEVELOPMENT_SERVER) {
     return {
+      reactStrictMode: false,
       env: {
         mongodb_username: 'JacobM',
         mongodb_pw: '9I0a8vupVsVi3Gip',
@@ -13,6 +14,7 @@ module.exports = (phase) => {
   }
 
   return {
+    reactStrictMode: false,
     env: {
       mongodb_username: 'JacobM',
       mongodb_pw: '9I0a8vupVsVi3Gip',

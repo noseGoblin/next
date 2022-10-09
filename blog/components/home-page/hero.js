@@ -14,9 +14,10 @@ function Hero() {
           layout='responsive'
         />
       </div>
-      <h1>Hi, I'm Jay</h1>
+      <h1>Hi, I&apos;m Jay</h1>
       <p>
-        I blog about web dev - mostly js frameworks like Angular and React y'all
+        I blog about web dev - mostly js frameworks like Angular and React
+        y&apos;all
       </p>
     </section>
   );
