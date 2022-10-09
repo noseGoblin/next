@@ -23,7 +23,7 @@ function ContactForm() {
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredName, setEnteredName] = useState('');
   const [enteredMessage, setEnteredMessage] = useState('');
-  const [enteredStatus, setEnteredStatus] = useState(); // 'pending' 'success' 'error'
+  const [requestStatus, setRequestStatus] = useState(); // 'pending' 'success' 'error'
   const [requestError, setRequestError] = useState();
 
   async function sendMessageHandler(event) {
